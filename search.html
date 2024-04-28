@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .icon {
+            width: 24px;
+            height: 24px;
+            background-size: cover;
+        }
+        .user-icon {
+            background-image: url('https://icons.iconarchive.com/icons/google/noto-emoji-people-bodyparts/1024/10102-person-icon.png');
+        }
+        .settings-icon {
+            background-image: url('https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/gear-icon.png');
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="bg-white shadow p-4">
+        <div class="flex justify-between items-center">
+            <div class="flex space-x-4">
+                <button class="px-3 py-1 border rounded text-sm font-medium border-gray-300">자치구전체</button>
+                <button class="px-3 py-1 border rounded text-sm font-medium border-gray-300">전체업종</button>
+                <button class="px-3 py-1 border rounded text-sm font-medium border-gray-300">2023년 4분기</button>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="icon user-icon"></div>
+                <div class="icon settings-icon"></div>
+            </div>
+        </div>
+        <div class="mt-4">
+            <input type="text" placeholder="검색" class="px-4 py-2 border rounded w-full">
+        </div>
+    </div>
+</body>
+</html>
