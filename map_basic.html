@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seoul Map - Fullscreen</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* 브라우저 창 전체를 채우는 스타일 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%; 
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // 특정 위치의 위도와 경도 좌표
+        var seoul = [37.5665, 126.9780];
+        var seoul_handongil = [37.5765, 126.9780];
+
+        // 지도 생성 및 서울로 지도 중심 설정
+        var map = L.map('map').setView(seoul, 17); // 확대 레벨을 15로 설정
+
+        // OSM 타일 레이어 추가
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // 서울의 위치에 마커 추가
+        L.marker(seoul).addTo(map)
+            .bindPopup('서울특별시, 대한민국').openPopup();
+        L.marker(seoul_handongil).addTo(map)
+            .bindPopup('서울특별시, 대한민국22').openPopup();
+
+
+    </script>
+</body>
+</html>

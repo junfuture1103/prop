@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seoul Map - Fullscreen</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* 브라우저 창 전체를 채우는 스타일 */
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #sidebar {
+            position: fixed; /* 고정 위치 */
+            left: 0; /* 왼쪽에 위치 */
+            width: 20%; /* 사이드바 너비 설정 */
+            height: 100%; /* 전체 높이 */
+            background-color: #f4f4f4; /* 배경색 */
+            padding: 10px;
+            box-sizing: border-box; /* 패딩을 포함한 너비 유지 */
+        }
+        
+        #map {
+            position: absolute; /* 절대 위치 */
+            left: 20%; /* 왼쪽에서 20% 떨어진 곳에서 시작 */
+            width: 80%; /* 남은 너비 */
+            height: 100%; /* 전체 높이 */
+        }        
+
+        .info-content img {
+            width: 100%; /* 이미지 전체 너비 */
+            height: auto; /* 높이 자동 조정 */
+            border-radius: 5px; /* 모서리 둥글게 */
+        }
+        .info-content h2 {
+            margin: 10px 0 5px; /* 상하 간격 조정 */
+        }
+        .info-content p {
+            margin: 5px 0; /* 상하 간격 조정 */
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar" class="info-content">
+        <img src="https://via.placeholder.com/150" alt="Store Image"/>
+        <h2>가게 이름</h2>
+        <p>이곳은 예시 가게에 대한 간단한 설명입니다.</p>
+    </div>
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var seoul = [37.5665, 126.9780];
+        var seoul_handongil = [37.5765, 126.9780];
+
+        var map = L.map('map').setView(seoul, 17); 
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker1 = L.marker(seoul).addTo(map)
+            .on('click', function() {
+                updateSidebar('카페블루', '서울특별시 중심의 카페입니다.', 'https://via.placeholder.com/150');
+            });
+
+        var marker2 = L.marker(seoul_handongil).addTo(map)
+            .on('click', function() {
+                updateSidebar('짬뽕최고', '한동길 인근의 맛있는 짬뽕집입니다.', 'https://via.placeholder.com/150');
+            });
+
+        function updateSidebar(name, description, imageUrl) {
+            document.querySelector('#sidebar h2').innerText = name;
+            document.querySelector('#sidebar p').innerText = description;
+            document.querySelector('#sidebar img').src = imageUrl;
+        }
+
+    </script>
+</body>
+</html>
