@@ -23,8 +23,8 @@
 
         /* Header styles */
         .header {
-            background-color: #613535;
-            color: white;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
             padding: 1rem;
             display: flex;
             justify-content: space-between;
@@ -45,7 +45,7 @@
         }
 
         .header .options a {
-            color: white;
+            color: rgb(0, 0, 0);
             text-decoration: none;
             font-weight: bold;
         }
@@ -61,9 +61,9 @@
     </style>
 </head>
 
-<body class="bg-gray-100 leading-normal tracking-normal">
+<body class="bg-gray-300 leading-normal tracking-normal">
     <div class="header">
-        <img src="logo.png" alt="Logo" class="logo">
+        <a href = ./index.html><img src="./assets/image/logo_header.jpg" alt="Logo" class="logo"></a>
         <div class="options">
             <a href="#"><i class="fas fa-search"></i></a>
             <a href="#">내 정보</a>
@@ -81,32 +81,33 @@
                 <div class="dropdown">
                     <label for="category" class="block text-sm font-medium text-gray-700">자치구 선택</label>
                     <select id="category" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>Choose a district</option>
-                        <option>Gangnam-gu</option>
-                        <option>Mapo-gu</option>
-                        <option>Seodaemun-gu</option>
+                        <option>자치구 전체</option>
+                        <option>서울시</option>
+                        <option>대전시</option>
+                        <option>부산시</option>
                     </select>
                 </div>
                 <div class="dropdown">
-                    <label for="type" class="block text-sm font-medium text-gray-700">청원종류</label>
+                    <label for="type" class="block text-sm font-medium text-gray-700">업종 선택</label>
                     <select id="type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>Petition Type</option>
-                        <option>Environment</option>
-                        <option>Public Safety</option>
-                        <option>Healthcare</option>
+                        <option>전체 업종</option>
+                        <option>요식업</option>
+                        <option>디저트</option>
+                        <option>학원</option>
                     </select>
                 </div>
                 <div class="dropdown">
-                    <label for="year" class="block text-sm font-medium text-gray-700">2023년 4분기</label>
+                    <label for="year" class="block text-sm font-medium text-gray-700">년도 및 분기 선택</label>
                     <select id="year" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>2023 Q4</option>
-                        <option>2023 Q3</option>
-                        <option>2023 Q2</option>
-                        <option>2023 Q1</option>
+                        <option>2024년 1분기</option>
+                        <option>2023년 4분기</option>
+                        <option>2023년 3분기</option>
+                        <option>2023년 2분기</option>
+                        <option>2023년 1분기</option>
                     </select>
                 </div>
             </div>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button id="searchButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 검색
             </button>
         </div>
@@ -114,24 +115,24 @@
         <div class="grid grid-cols-3 gap-4 mt-8">
             <!-- Total Visitors Card -->
             <div class="card p-5">
-                <h2 class="font-semibold text-xl mb-4">전체 방문자</h2>
+                <h2 class="font-semibold text-xl mb-4">점포수</h2>
                 <div class="flex items-center mb-2">
                     <span class="highlight text-blue-500 mr-2">전체</span>
                     <span>6,653 건</span>
                 </div>
                 <div class="flex items-center mb-2">
-                    <span class="highlight text-green-500 mr-2">유입방문자</span>
+                    <span class="highlight text-green-500 mr-2">일반점포</span>
                     <span>5,561 건</span>
                 </div>
                 <div class="flex items-center mb-2">
-                    <span class="highlight text-red-500 mr-2">재방문자</span>
+                    <span class="highlight text-red-500 mr-2">프랜차이즈</span>
                     <span>1,092 건</span>
                 </div>
-                <div class="mt-4">
-                    <div>2023년 3월기</div>
-                    <div>6,612 건</div>
-                    <div>2022년 4월기</div>
-                    <div>6,540 건</div>
+                <div class="mt-4 text-right">
+                    <div>2023년 3월</div>
+                    <div><strong>6,612 건</strong></div>
+                    <div>2022년 4월</div>
+                    <div><strong>6,540 건</strong></div>
                 </div>
             </div>
 
@@ -143,18 +144,21 @@
                     <div class="text-3xl font-bold">1,598 억</div>
                 </div>
                 <div class="flex justify-between items-center mb-2">
-                    <div class="text-lg">신규방문자 대비</div>
+                    <div class="text-lg">전분기 대비</div>
                     <div class="text-xl font-bold text-green-500">+ 80 억</div>
                 </div>
                 <div class="flex justify-between items-center">
-                    <div class="text-lg">재방문자 대비</div>
+                    <div class="text-lg">전년동분기 대비</div>
                     <div class="text-xl font-bold text-red-500">+ 34 억</div>
                 </div>
                 <div class="mt-4">
+                </div>
+				
+                <div class="mt-4 text-right">
                     <div>2023년 3분기</div>
-                    <div>1,518 억</div>
+                    <div><strong>1,518 억</strong></div>
                     <div>2022년 4분기</div>
-                    <div>1,564 억</div>
+                    <div><strong>1,564 억</strong></div>
                 </div>
             </div>
 
@@ -181,6 +185,12 @@
             window.location.href = 'map.html';
         });
     </script>
+	
+	<script>
+		document.getElementById("searchButton").addEventListener("click", function() {
+		alert("검색중입니다...");
+		});
+	</script>
 </body>
 
 </html>
