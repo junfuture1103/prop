@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Product Ranking and Recommendations</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Step 1: Connect to Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap">
     <style>
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .highlight {
-            background-color: #f9f9f9;
-            border-radius: 9999px;
-            padding: 0.5rem 1rem;
+        .search-bar {
+            max-width: 600px;
+            margin: auto;
         }
 
         /* Header styles */
@@ -34,7 +24,7 @@
         }
 
         .header .logo {
-            width: 100px;
+            width: 50px;
             /* Adjust as needed */
             height: auto;
         }
@@ -54,14 +44,9 @@
             text-decoration: underline;
         }
 
-        /* Step 3: Apply font to body */
-        body {
-            font-family: 'Nanum Gothic', sans-serif;
-        }
     </style>
 </head>
-
-<body class="bg-gray-300 leading-normal tracking-normal">
+<body class="bg-gray-100">
     <div class="header">
         <a href = ./index.html><img src="./assets/image/logo_header.jpg" alt="Logo" class="logo"></a>
         <div class="options">
@@ -71,126 +56,95 @@
         </div>
     </div>
 
-    <div class="container mx-auto px-4">
-        <div class="p-8 rounded-lg flex flex-col items-left justify-center space-y-4">
-            <h4 class="text-2xl font-semibold mb-4">품아시 상권 분석 서비스</h4>
+    <div class="py-8">
+        <div class="search-bar flex justify-center items-center mb-10">
+            <input type="text" placeholder="검색어 입력" class="form-input px-4 py-2 w-full rounded-full border-2 border-gray-300 focus:border-gray-500 focus:outline-none">
         </div>
-
-        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4">
-            <div class="flex items-center space-x-4">
-                <div class="dropdown">
-                    <label for="category" class="block text-sm font-medium text-gray-700">자치구 선택</label>
-                    <select id="category" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>자치구 전체</option>
-                        <option>서울시</option>
-                        <option>대전시</option>
-                        <option>부산시</option>
-                    </select>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Left Column -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-4">핫딜 실시간 RANKING</h2>
+                    <ul>
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-20 h-20 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">종합 첫 번째</h3>
+                                    <p class="text-gray-600">특별한 할인과 함께 최고의 상품을 만나보세요!</p>
+                                    <span class="text-red-500 font-bold">50% 할인</span> <span class="text-gray-500">13일 남음</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-20 h-20 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">인기 상품</h3>
+                                    <p class="text-gray-600">갓 출시된 상품이 이미 사랑받고 있습니다!</p>
+                                    <span class="text-red-500 font-bold">31% 할인</span> <span class="text-gray-500">29일 남음</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-20 h-20 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">유니크 제품</h3>
+                                    <p class="text-gray-600">특별한 디자인에서 느낄 수 있는 감성 상품</p>
+                                    <span class="text-red-500 font-bold">28% 할인</span> <span class="text-gray-500">5일 남음</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="dropdown">
-                    <label for="type" class="block text-sm font-medium text-gray-700">업종 선택</label>
-                    <select id="type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>전체 업종</option>
-                        <option>요식업</option>
-                        <option>디저트</option>
-                        <option>학원</option>
-                    </select>
-                </div>
-                <div class="dropdown">
-                    <label for="year" class="block text-sm font-medium text-gray-700">년도 및 분기 선택</label>
-                    <select id="year" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>2024년 1분기</option>
-                        <option>2023년 4분기</option>
-                        <option>2023년 3분기</option>
-                        <option>2023년 2분기</option>
-                        <option>2023년 1분기</option>
-                    </select>
-                </div>
-            </div>
-            <button id="searchButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                검색
-            </button>
-        </div>
-
-        <div class="grid grid-cols-3 gap-4 mt-8">
-            <!-- Total Visitors Card -->
-            <div class="card p-5">
-                <h2 class="font-semibold text-xl mb-4">점포수</h2>
-                <div class="flex items-center mb-2">
-                    <span class="highlight text-blue-500 mr-2">전체</span>
-                    <span>6,653 건</span>
-                </div>
-                <div class="flex items-center mb-2">
-                    <span class="highlight text-green-500 mr-2">일반점포</span>
-                    <span>5,561 건</span>
-                </div>
-                <div class="flex items-center mb-2">
-                    <span class="highlight text-red-500 mr-2">프랜차이즈</span>
-                    <span>1,092 건</span>
-                </div>
-                <div class="mt-4 text-right">
-                    <div>2023년 3월</div>
-                    <div><strong>6,612 건</strong></div>
-                    <div>2022년 4월</div>
-                    <div><strong>6,540 건</strong></div>
-                </div>
-            </div>
-
-            <!-- Main Metrics Card -->
-            <div class="card p-5">
-                <h2 class="font-semibold text-xl mb-4">매출액</h2>
-                <div class="flex justify-between items-center mb-4">
-                    <div class="text-lg">2023년 4분기 매출액</div>
-                    <div class="text-3xl font-bold">1,598 억</div>
-                </div>
-                <div class="flex justify-between items-center mb-2">
-                    <div class="text-lg">전분기 대비</div>
-                    <div class="text-xl font-bold text-green-500">+ 80 억</div>
-                </div>
-                <div class="flex justify-between items-center">
-                    <div class="text-lg">전년동분기 대비</div>
-                    <div class="text-xl font-bold text-red-500">+ 34 억</div>
-                </div>
-                <div class="mt-4">
-                </div>
-				
-                <div class="mt-4 text-right">
-                    <div>2023년 3분기</div>
-                    <div><strong>1,518 억</strong></div>
-                    <div>2022년 4분기</div>
-                    <div><strong>1,564 억</strong></div>
+                <!-- Right Column -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-4">오늘 뭐 먹지?!</h2>
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex space-x-2">
+                            <button class="px-4 py-2 bg-gray-200 rounded">전체</button>
+                            <button class="px-4 py-2 bg-gray-200 rounded">음식</button>
+                            <button class="px-4 py-2 bg-gray-200 rounded">디저트</button>
+                            <button class="px-4 py-2 bg-gray-200 rounded">기타</button>
+                        </div>
+                        <select class="form-select px-4 py-2 rounded border-gray-300">
+                            <option selected>최신순</option>
+                            <option>인기순</option>
+                        </select>
+                    </div>
+                    <ul>
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/150" alt="Food Image" class="w-20 h-20 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">종합 첫 번째</h3>
+                                    <p class="text-gray-600">특별한 할인과 함께 최고의 식사를 즐겨보세요!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/150" alt="Food Image" class="w-20 h-20 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">인기 수산</h3>
+                                    <p class="text-gray-600">갓 잡은 신선함이 살아있는 최고의 만찬을 만나보세요!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flex items-center">
+                                <img src="https://via.placeholder.com/150" alt="Food Image" class="w-20 h-20 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">유니크 제품</h3>
+                                    <p class="text-gray-600">특별한 디자인에서 느낄 수 있는 감성 상품</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Future Projections Card -->
-            <div class="card p-5">
-                <h2 class="font-semibold text-xl mb-4">유동인구</h2>
-                <!-- Placeholder for future content -->
-                <div class="text-center text-gray-500">Content coming soon...</div>
-            </div>
-        </div>
-
-        <!-- Map Button -->
-        <div class="flex justify-end mt-4">
-            <button id="mapButton" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                지도
-            </button>
         </div>
     </div>
-
-    <script>
-        // JavaScript 코드 추가
-        document.getElementById('mapButton').addEventListener('click', function() {
-            // 이동할 페이지의 URL을 여기에 입력
-            window.location.href = 'map.html';
-        });
-    </script>
-	
-	<script>
-		document.getElementById("searchButton").addEventListener("click", function() {
-		alert("검색중입니다...");
-		});
-	</script>
 </body>
-
 </html>
