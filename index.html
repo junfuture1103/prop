@@ -153,6 +153,22 @@
                 <div class="text-center text-gray-500">Content coming soon...</div>
             </div>
         </div>
+
+        <!-- Map Button -->
+        <div class="flex justify-end mt-4">
+            <button id="mapButton" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                지도
+            </button>
+        </div>
     </div>
+
+	
+    <script>
+        // JavaScript 코드 추가
+        document.getElementById('mapButton').addEventListener('click', function() {
+            // 이동할 페이지의 URL을 여기에 입력
+            window.location.href = 'map.html';
+        });
+    </script>
 </body>
 </html>
