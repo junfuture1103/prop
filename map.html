@@ -20,6 +20,16 @@
             background-color: #f4f4f4;
             padding: 10px;
             box-sizing: border-box;
+            border-radius: 8px;
+        }
+        .search-bar {
+            background: #F3F4F6;
+        }
+        .menu-item {
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
         }
         
         #map {
@@ -47,13 +57,67 @@
         .tab-active {
             border-color: blue;
         }
+        .logo {
+            width: 20px;  /* 로고의 너비 조절 */
+            height: auto; /* 로고의 높이를 자동으로 조절하여 비율 유지 */
+        }
     </style>
 </head>
 <body>
     <div id="sidebar" class="info-content">
-        <img src="https://via.placeholder.com/150" alt="Store Image"/>
-        <h2>가게 이름</h2>
-        <p>이곳은 예시 가게에 대한 간단한 설명입니다.</p>
+        <div class="max-w-md mx-auto">
+            <!-- Header with search -->
+            <header class="p-4 bg-white shadow">
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <img src = "assets/image/logo_header.jpg" class="logo">
+                    </button>
+                    <div class="flex-grow">
+                        <input type="text" placeholder="검색" class="w-full p-2 search-bar">
+                    </div>
+                </div>
+            </header>
+    
+            <!-- Main image -->
+            <div class="mt-4 p-4">
+                <img src="./assets/image/goodbread.jpg" alt="Main Image" class="w-full h-auto rounded-lg shadow">
+            </div>
+    
+            <!-- Product details -->
+            <div class="px-4">
+                <h2 class="text-lg font-semibold">좋아 좋아</h2>
+                <p class="text-gray-600">빠르고 맛있는 최고의 식사방법 탐험</p>
+                <a href="#" class="text-blue-500">더 보기</a>
+                <div class="mt-2 flex justify-between items-center">
+                    <span class="text-xl font-bold text-purple-600">71,971,410 원 달성</span>
+                    <button class="px-4 py-2 bg-purple-500 text-white rounded-lg">후원하기</button>
+                </div>
+                <div class="mt-2 h-2 bg-gray-300 rounded-full">
+                    <div class="bg-purple-500 h-2 rounded-full" style="width: 67%;"></div>
+                </div>
+            </div>
+    
+            <!-- Menu items -->
+            <div class="mt-4 px-4">
+                <h3 class="text-lg font-semibold mb-2">메뉴 MENU</h3>
+                <div class="grid gap-4">
+                    <div class="menu-item bg-white p-4 rounded-lg shadow flex items-center space-x-4">
+                        <img src="./assets/image/croasang_hot.jpg" alt="Croissant Hot" class="w-16 h-16 rounded-full">
+                        <div>
+                            <h4 class="font-semibold">크로아상 빵</h4>
+                            <span class="text-gray-500 font-bold">2,700원</span>
+                        </div>
+                    </div>
+                    <div class="menu-item bg-white p-4 rounded-lg shadow flex items-center space-x-4">
+                        <img src="./assets/image/sick_bbang.jpg" alt="Croissant Cold" class="w-16 h-16 rounded-full">
+                        <div>
+                            <h4 class="font-semibold">식빵</h4>
+                            <span class="text-gray-800 font-bold">2,000원</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="map"></div>
 

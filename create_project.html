@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-6">
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <div class="flex justify-between items-center mb-4">
+                <div>
+                    <label for="project-select" class="block text-sm font-medium text-gray-700">내 프로젝트</label>
+                    <select id="project-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option>종합 현황</option>
+                    </select>
+                </div>
+                <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                    새로운 프로젝트 만들기
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4 mb-4">
+                <div>
+                    <label for="search" class="sr-only">검색</label>
+                    <input type="text" name="search" id="search" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="프로젝트 검색">
+                </div>
+            </div>
+
+            <div class="flex flex-col space-y-4">
+                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <span>1. 매장 분류</span>
+                    <input type="text" placeholder="예시값 > 분석/보고서" class="ml-4 flex-1 border-gray-300 rounded">
+                </div>
+                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <span>2. 주소</span>
+                    <input type="text" placeholder="주소 입력" class="ml-4 flex-1 border-gray-300 rounded">
+                </div>
+                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <span>3. 모집 금액</span>
+                    <input type="text" placeholder="금액 입력" class="ml-4 flex-1 border-gray-300 rounded">
+                </div>
+                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <span>4. 펀딩하기</span>
+                    <div class="flex items-center">
+                        <label class="block text-sm font-medium text-gray-700 mr-2">시작일</label>
+                        <input type="date" class="border-gray-300 rounded mr-4">
+                        <label class="block text-sm font-medium text-gray-700 mr-2">종료일</label>
+                        <input type="date" class="border-gray-300 rounded">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-end">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    저장
+                </button>
+                <button class="ml-2 bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded">
+                    취소
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
