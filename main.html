@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            background-color: #f9f9f9;
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+        }
+
+        
+        /* Header styles */
+        .header {
+            background-color: #613535;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
+
+        .header .options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header .options a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header .options a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="options">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#">내 정보</a>
+            <a href="#">메인페이지</a>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4">
+        <div class="p-8 rounded-lg flex flex-col items-left justify-center space-y-4">
+            <h4 class="text-2xl font-semibold mb-4">품아시 상권 분석 서비스</h4>
+        </div>
+    
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4">
+            <div class="flex items-center space-x-4">
+                <div class="dropdown">
+                    <label for="category" class="block text-sm font-medium text-gray-700">자치구 선택</label>
+                    <select id="category" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option>Choose a district</option>
+                        <option>Gangnam-gu</option>
+                        <option>Mapo-gu</option>
+                        <option>Seodaemun-gu</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="type" class="block text-sm font-medium text-gray-700">청원종류</label>
+                    <select id="type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option>Petition Type</option>
+                        <option>Environment</option>
+                        <option>Public Safety</option>
+                        <option>Healthcare</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="year" class="block text-sm font-medium text-gray-700">2023년 4분기</label>
+                    <select id="year" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option>2023 Q4</option>
+                        <option>2023 Q3</option>
+                        <option>2023 Q2</option>
+                        <option>2023 Q1</option>
+                    </select>
+                </div>
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                검색
+            </button>
+        </div>          
+        
+        <div class="grid grid-cols-3 gap-4 mt-8">
+            <!-- Total Visitors Card -->
+            <div class="card p-5">
+                <h2 class="font-semibold text-xl mb-4">전체 방문자</h2>
+                <div class="flex items-center mb-2">
+                    <span class="highlight text-blue-500 mr-2">전체</span>
+                    <span>6,653 건</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <span class="highlight text-green-500 mr-2">유입방문자</span>
+                    <span>5,561 건</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <span class="highlight text-red-500 mr-2">재방문자</span>
+                    <span>1,092 건</span>
+                </div>
+                <div class="mt-4">
+                    <div>2023년 3월기</div>
+                    <div>6,612 건</div>
+                    <div>2022년 4월기</div>
+                    <div>6,540 건</div>
+                </div>
+            </div>
+
+            <!-- Main Metrics Card -->
+            <div class="card p-5">
+                <h2 class="font-semibold text-xl mb-4">매출액</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-lg">2023년 4분기 매출액</div>
+                    <div class="text-3xl font-bold">1,598 억</div>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                    <div class="text-lg">신규방문자 대비</div>
+                    <div class="text-xl font-bold text-green-500">+ 80 억</div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div class="text-lg">재방문자 대비</div>
+                    <div class="text-xl font-bold text-red-500">+ 34 억</div>
+                </div>
+                <div class="mt-4">
+                    <div>2023년 3분기</div>
+                    <div>1,518 억</div>
+                    <div>2022년 4분기</div>
+                    <div>1,564 억</div>
+                </div>
+            </div>
+
+            <!-- Future Projections Card -->
+            <div class="card p-5">
+                <h2 class="font-semibold text-xl mb-4">유동인구</h2>
+                <!-- Placeholder for future content -->
+                <div class="text-center text-gray-500">Content coming soon...</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
