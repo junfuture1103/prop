@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Dashboard</title>
+        <!-- Step 1: Connect to Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .increase {
@@ -12,19 +14,84 @@
         .decrease {
             color: red;
         }
+        .button {
+            font-family: 'Nanum Gothic', sans-serif; /* 여기에 원하는 글꼴을 입력하세요 */
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            border-bottom: 1px solid transparent;/* Step 3: Apply font to header */
+            font-family: 'Nanum Gothic', sans-serif;
+        
+        }
+
+        .button:hover {
+            color: purple;
+            border-bottom-color: purple;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Step 3: Apply font to header */
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .header .logo {
+            width: 50px;
+            /* Adjust as needed */
+            height: auto;
+        }
+
+        .header .options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header .options a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header .options a:hover {
+            text-decoration: underline;
+        }
+        /* Step 3: Apply font to body */
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-4">
-        <!-- Navigation Bar with Category Label and Wider Button Spacing -->
-        <div class="mb-4 flex justify-center space-x-6">
-            <span class="text-blue-500 font-bold py-2 px-4">카테고리:</span>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">홈</button>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">주변</button>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">인기</button>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">신규</button>
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">예정</button>
+<body class="bg-gray-300">
+    <div class="header">
+        <a href = ./index.html><img src="./assets/image/logo_header.jpg" alt="Logo" class="logo"></a>
+        
+        <div class="options">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#">내 정보</a>
+            <a href="#">메인페이지</a>
         </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-4">     
+        <div class="main-menu flex justify-center space-x-8"> 
+            <a href="#" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-300 ml-auto">프로젝트 후원하기</a>
+        </div>
+       
+        <!-- Navigation Bar with Category Label and Wider Button Spacing -->        
+        <div class="main-menu flex justify-center mb-10 space-x-8">
+            <a href="./market_analyse.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">홈</a>
+            <a href="./project_list.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">주변</a>
+            <a href="./index.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">인기</a>
+            <a href="./project_list.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">신규</a>
+            <a href="./index.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">예정</a>
+        
+        </div>       
 
         <!-- Main Content Section -->
         <div class="flex -mx-4 items-stretch">
