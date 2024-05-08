@@ -1,10 +1,33 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Menu</title>
+    </style>
+</head>
+<body class="bg-gray-100">
+    
+</body>
+</html>
+
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>서울 지도 - 전체 화면</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hot-badge {
+            background-color: #ff4757;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+    </style>
     <style>
         body, html {
             height: 100%;
@@ -54,6 +77,33 @@
         <img src="https://via.placeholder.com/150" alt="Store Image"/>
         <h2>가게 이름</h2>
         <p>이곳은 예시 가게에 대한 간단한 설명입니다.</p>
+
+        <div class="max-w-sm mx-auto my-10">
+            <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="p-4 border-b">
+                    <h1 class="text-lg font-semibold text-gray-700">인기 MENU</h1>
+                </div>
+                <div class="p-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <img src="https://source.unsplash.com/100x100/?croissant" alt="Croissant" class="w-20 h-20 rounded-full mr-3">
+                            <div>
+                                <h2 class="text-lg font-semibold text-gray-800">오리지널 빵(대)</h2>
+                                <span class="hot-badge">HOT</span>
+                            </div>
+                        </div>
+                        <span class="text-lg font-semibold text-gray-900">47,000원</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="https://source.unsplash.com/100x100/?bread" alt="Bread" class="w-20 h-20 rounded-full mr-3">
+                            <h2 class="text-lg font-semibold text-gray-800">오리지널 빵(중)</h2>
+                        </div>
+                        <span class="text-lg font-semibold text-gray-900">42,000원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="map"></div>
 

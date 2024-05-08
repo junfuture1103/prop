@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>Seoul Map - Fullscreen</title>
+    <meta charset="UTF-8">
+    <title>서울 지도 - 전체 화면</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* 브라우저 창 전체를 채우는 스타일 */
         body, html {
             height: 100%;
             margin: 0;
@@ -12,32 +13,39 @@
         }
         
         #sidebar {
-            position: fixed; /* 고정 위치 */
-            left: 0; /* 왼쪽에 위치 */
-            width: 20%; /* 사이드바 너비 설정 */
-            height: 100%; /* 전체 높이 */
-            background-color: #f4f4f4; /* 배경색 */
+            position: fixed;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            background-color: #f4f4f4;
             padding: 10px;
-            box-sizing: border-box; /* 패딩을 포함한 너비 유지 */
+            box-sizing: border-box;
         }
         
         #map {
-            position: absolute; /* 절대 위치 */
-            left: 20%; /* 왼쪽에서 20% 떨어진 곳에서 시작 */
-            width: 80%; /* 남은 너비 */
-            height: 100%; /* 전체 높이 */
-        }        
+            position: absolute;
+            left: 20%;
+            width: 80%;
+            height: 100%;
+        }
 
-        .info-content img {
-            width: 100%; /* 이미지 전체 너비 */
-            height: auto; /* 높이 자동 조정 */
-            border-radius: 5px; /* 모서리 둥글게 */
+        #popup {
+            display: none; /* 초기 상태는 숨김 */
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            max-width: 1000px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 1000;
         }
-        .info-content h2 {
-            margin: 10px 0 5px; /* 상하 간격 조정 */
+        .tab {
+            border-bottom: 2px solid transparent;
         }
-        .info-content p {
-            margin: 5px 0; /* 상하 간격 조정 */
+        .tab-active {
+            border-color: blue;
         }
     </style>
 </head>
@@ -48,7 +56,54 @@
         <p>이곳은 예시 가게에 대한 간단한 설명입니다.</p>
     </div>
     <div id="map"></div>
-    
+
+    <div id="popup" class="hidden">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="bg-white shadow rounded-lg p-6">
+                <div class="flex justify-between items-center border-b pb-4">
+                    <h1 class="text-xl font-semibold">보고서 프로젝트</h1>
+                    <div class="flex space-x-2">
+                        <button class="tab tab-active py-2 px-4 text-blue-500 border-blue-500">국내보고서</button>
+                        <button class="tab py-2 px-4 text-gray-600">외국보고서</button>
+                        <button class="tab py-2 px-4 text-gray-600">미래보고서</button>
+                        <button class="tab py-2 px-4 text-gray-600">연구보고서</button>
+                        <button class="tab py-2 px-4 text-gray-600">지역(세부지역)</button>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-gray-600">총 보고서 수 <span class="font-semibold">1,290,258개</span>에 대한 보고서 <span class="font-semibold">1,290,258개</span>입니다.</p>
+                    <p class="text-gray-600 mt-2">본 보고서에 수록된 내용은 정책정보로만 활용되며 다수 수요에 의해, 사용자의 선택에 의해 통계화가 이루어집니다.</p>
+                </div>
+                <div class="mt-6">
+                    <h2 class="text-lg font-semibold border-b pb-2">종합의견</h2>
+                    <ul class="list-disc pl-5 mt-4 text-gray-600">
+                        <li>수상한 연구자료 및 자료가 전년도기에 비해 증가하고 있습니다. 최근에 발견된 새로운 연구 자료에 대하여 추가 분석이 필요합니다.</li>
+                        <li>수상한 자료가 지역에 따라 이동중 입니다. 연구자료의 분포와 흐름에 대한 모니터링이 필요합니다.</li>
+                        <li>수상한 전년 동기에 비해 통계오류가 증가하고 있습니다. 정확한 원인분석을 진행해야 합니다.</li>
+                        <li>지난달 방문객 16만 명 중 수상한 방문객은 16만 명, 약 16만 명, 유동인구 14만 명입니다.</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-3 gap-4 mt-6">
+                    <div class="bg-blue-100 p-4 rounded-lg shadow">
+                        <h3 class="text-blue-800 font-semibold">최근수상 +1개월</h3>
+                        <p class="text-blue-800 mt-2">2023년 4월</p>
+                        <p class="text-blue-800 font-bold text-lg">495 건</p>
+                    </div>
+                    <div class="bg-green-100 p-4 rounded-lg shadow">
+                        <h3 class="text-green-800 font-semibold">매출액</h3>
+                        <p class="text-green-800 mt-2">2023년 4월</p>
+                        <p class="text-green-800 font-bold text-lg">406 만원</p>
+                    </div>
+                    <div class="bg-red-100 p-4 rounded-lg shadow">
+                        <h3 class="text-red-800 font-semibold">유동인구</h3>
+                        <p class="text-red-800 mt-2">2023년 4월</p>
+                        <p class="text-red-800 font-bold text-lg">21,384 h/월</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         var seoul = [37.5665, 126.9780];
@@ -63,20 +118,26 @@
 
         var marker1 = L.marker(seoul).addTo(map)
             .on('click', function() {
-                updateSidebar('카페블루', '서울특별시 중심의 카페입니다.', 'https://via.placeholder.com/150');
+                showPopup();
             });
 
         var marker2 = L.marker(seoul_handongil).addTo(map)
             .on('click', function() {
-                updateSidebar('짬뽕최고', '한동길 인근의 맛있는 짬뽕집입니다.', 'https://via.placeholder.com/150');
+                showPopup();
             });
 
-        function updateSidebar(name, description, imageUrl) {
-            document.querySelector('#sidebar h2').innerText = name;
-            document.querySelector('#sidebar p').innerText = description;
-            document.querySelector('#sidebar img').src = imageUrl;
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
         }
 
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+                // 지도 클릭시 팝업 닫기
+        map.on('click', function() {
+            closePopup();
+        });
     </script>
 </body>
 </html>
