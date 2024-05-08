@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .heart {
+            color: #e0245e;
+        }
+        .share {
+            color: #1da1f2;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <img src="https://via.placeholder.com/500x300" alt="Product Image" class="w-full">
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold mb-2">Product Title</h1>
+                <p class="text-gray-700 mb-4">A brief description of the product goes here.</p>
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <p class="text-lg font-semibold">₩3,000,000</p>
+                        <p class="text-gray-500">Campaign Dates: 2023.12.12 - 2024.04.19</p>
+                    </div>
+                    <div class="text-red-500 font-bold text-xl">234%</div>
+                </div>
+                <p class="text-gray-700 mb-4">Current Funding: ₩7,020,000</p>
+                <div class="flex space-x-4 mb-4">
+                    <button class="p-2 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 focus:outline-none">
+                        <i class="far fa-heart heart"></i>
+                    </button>
+                    <button class="p-2 rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 focus:outline-none">
+                        <i class="far fa-share-square share"></i>
+                    </button>
+                </div>
+                <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                    Support This Project
+                </button>
+            </div>
+        </div>
+        <div class="mt-8">
+            <ul class="flex border-b">
+                <li class="-mb-px mr-1">
+                    <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Details</a>
+                </li>
+                <li class="mr-1">
+                    <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">Updates</a>
+                </li>
+                <li class="mr-1">
+                    <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold" href="#">FAQ</a>
+                </li>
+            </ul>
+        </div>
+        <div class="py-4">
+            <img src="https://via.placeholder.com/500x300" alt="Additional Image" class="w-full">
+            asdkfjlkasdjf
+        </div>
+    </div>
+</body>
+</html>

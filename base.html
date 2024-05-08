@@ -3,38 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu List</title>
+    <title>Product Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Noto Sans KR', sans-serif;
+        .increase {
+            color: green;
+        }
+        .decrease {
+            color: red;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-white text-gray-800">
-    <div class="max-w-lg mx-auto py-10">
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold text-center mb-6">Product Dashboard</h1>
+        <div class="grid grid-cols-3 gap-4">
+            <!-- Top Products Section -->
+            <div class="bg-white p-4 shadow rounded-lg">
+                <h2 class="text-lg font-semibold mb-3">Top Products</h2>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium">Product A</span>
+                    <span class="text-sm increase">234% Increase</span>
+                </div>
+                <img src="https://via.placeholder.com/150" alt="Product A" class="mb-2">
+                <p class="text-sm">High demand in recent sales</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg">
+                <h2 class="text-lg font-semibold mb-3">Top Products</h2>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium">Product B</span>
+                    <span class="text-sm increase">64% Increase</span>
+                </div>
+                <img src="https://via.placeholder.com/150" alt="Product B" class="mb-2">
+                <p class="text-sm">Consistent performance</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg">
+                <h2 class="text-lg font-semibold mb-3">Top Products</h2>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium">Product C</span>
+                    <span class="text-sm increase">125% Increase</span>
+                </div>
+                <img src="https://via.placeholder.com/150" alt="Product C" class="mb-2">
+                <p class="text-sm">Popular in new markets</p>
+            </div>
 
-        <div class="search-bar flex justify-center items-center mb-10">
-            <input type="text" placeholder="검색어 입력" class="form-input px-4 py-2 w-full rounded-full border-2 border-gray-300 focus:border-gray-500 focus:outline-none">
+            <!-- Low Performance Products Section -->
+            <div class="bg-white p-4 shadow rounded-lg">
+                <h2 class="text-lg font-semibold mb-3">Low Performance Products</h2>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium">Product D</span>
+                    <span class="text-sm decrease">234% Decrease</span>
+                </div>
+                <img src="https://via.placeholder.com/150" alt="Product D" class="mb-2">
+                <p class="text-sm">Declining sales figures</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg">
+                <h2 class="text-lg font-semibold mb-3">Low Performance Products</h2>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium">Product E</span>
+                    <span class="text-sm decrease">64% Decrease</span>
+                </div>
+                <img src="https://via.placeholder.com/150" alt="Product E" class="mb-2">
+                <p class="text-sm">Low customer interest</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded-lg">
+                <h2 class="text-lg font-semibold mb-3">Low Performance Products</h2>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-sm font-medium">Product F</span>
+                    <span class="text-sm decrease">125% Decrease</span>
+                </div>
+                <img src="https://via.placeholder.com/150" alt="Product F" class="mb-2">
+                <p class="text-sm">Poor market fit</p>
+            </div>
         </div>
-
-        <div class="text-center mb-8">
-            <h1 class="text-2xl font-bold">인기검색어</h1>
-            <p class="text-sm text-gray-600">05.02 13:00 기준</p>
-        </div>
-        <ul class="space-y-3">
-            <li>1. 조반</li>
-            <li>2. 치리</li>
-            <li>3. 아이스크림</li>
-            <li>4. 탕수육</li>
-            <li>5. 커피</li>
-            <li>6. 바스코 치즈케이크</li>
-            <li>7. 스프레이</li>
-            <li>8. 밥수</li>
-            <li>9. 하이볼</li>
-            <li>10. 생맥주</li>
-        </ul>
     </div>
 </body>
 </html>
