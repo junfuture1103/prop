@@ -1,215 +1,158 @@
-<!DOCTYPE HTML>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Forty by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            background-color: #f9f9f9;
+            border-radius: 9999px;
+            padding: 0.5rem 1rem;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        
+        /* Header styles */
+        .header {
+            background-color: #613535;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+        .header .logo {
+            width: 100px; /* Adjust as needed */
+            height: auto;
+        }
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="landing.html">Landing</a></li>
-							<li><a href="generic.html">Generic</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#" class="button primary fit">Get Started</a></li>
-							<li><a href="#" class="button fit">Log In</a></li>
-						</ul>
-					</nav>
+        .header .options {
+            display: flex;
+            gap: 1rem;
+        }
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>HI JUNTHEWORLD PROPTECH!!</h1>
-							</header>
-							<div class="content">
-								<p>2024 데이터 공모전</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Get Started</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+        .header .options a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-				<!-- Main -->
-					<div id="main">
+        .header .options a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="header">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="options">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#">내 정보</a>
+            <a href="#">메인페이지</a>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4">
+        <div class="p-8 rounded-lg flex flex-col items-left justify-center space-y-4">
+            <h4 class="text-2xl font-semibold mb-4">품아시 상권 분석 서비스</h4>
+        </div>
+    
+        <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4">
+            <div class="flex items-center space-x-4">
+                <div class="dropdown">
+                    <label for="category" class="block text-sm font-medium text-gray-700">자치구 선택</label>
+                    <select id="category" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option>Choose a district</option>
+                        <option>Gangnam-gu</option>
+                        <option>Mapo-gu</option>
+                        <option>Seodaemun-gu</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="type" class="block text-sm font-medium text-gray-700">청원종류</label>
+                    <select id="type" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option>Petition Type</option>
+                        <option>Environment</option>
+                        <option>Public Safety</option>
+                        <option>Healthcare</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <label for="year" class="block text-sm font-medium text-gray-700">2023년 4분기</label>
+                    <select id="year" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                        <option>2023 Q4</option>
+                        <option>2023 Q3</option>
+                        <option>2023 Q2</option>
+                        <option>2023 Q1</option>
+                    </select>
+                </div>
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                검색
+            </button>
+        </div>          
+        
+        <div class="grid grid-cols-3 gap-4 mt-8">
+            <!-- Total Visitors Card -->
+            <div class="card p-5">
+                <h2 class="font-semibold text-xl mb-4">전체 방문자</h2>
+                <div class="flex items-center mb-2">
+                    <span class="highlight text-blue-500 mr-2">전체</span>
+                    <span>6,653 건</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <span class="highlight text-green-500 mr-2">유입방문자</span>
+                    <span>5,561 건</span>
+                </div>
+                <div class="flex items-center mb-2">
+                    <span class="highlight text-red-500 mr-2">재방문자</span>
+                    <span>1,092 건</span>
+                </div>
+                <div class="mt-4">
+                    <div>2023년 3월기</div>
+                    <div>6,612 건</div>
+                    <div>2022년 4월기</div>
+                    <div>6,540 건</div>
+                </div>
+            </div>
 
-						<!-- One -->
-							<section id="one" class="tiles">
-								<article>
-									<span class="image">
-										<img src="images/pic01.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Aliquam</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic02.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Tempus</a></h3>
-										<p>feugiat amet tempus</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic03.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Magna</a></h3>
-										<p>Lorem etiam nullam</p>
-										<!-- test -->
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic04.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Ipsum</a></h3>
-										<p>Nisl sed aliquam</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic05.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Consequat</a></h3>
-										<p>Ipsum dolor sit amet</p>
-									</header>
-								</article>
-								<article>
-									<span class="image">
-										<img src="images/pic06.jpg" alt="" />
-									</span>
-									<header class="major">
-										<h3><a href="landing.html" class="link">Etiam</a></h3>
-										<p>Feugiat amet tempus</p>
-									</header>
-								</article>
-							</section>
+            <!-- Main Metrics Card -->
+            <div class="card p-5">
+                <h2 class="font-semibold text-xl mb-4">매출액</h2>
+                <div class="flex justify-between items-center mb-4">
+                    <div class="text-lg">2023년 4분기 매출액</div>
+                    <div class="text-3xl font-bold">1,598 억</div>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                    <div class="text-lg">신규방문자 대비</div>
+                    <div class="text-xl font-bold text-green-500">+ 80 억</div>
+                </div>
+                <div class="flex justify-between items-center">
+                    <div class="text-lg">재방문자 대비</div>
+                    <div class="text-xl font-bold text-red-500">+ 34 억</div>
+                </div>
+                <div class="mt-4">
+                    <div>2023년 3분기</div>
+                    <div>1,518 억</div>
+                    <div>2022년 4분기</div>
+                    <div>1,564 억</div>
+                </div>
+            </div>
 
-						<!-- Two -->
-							<section id="two">
-								<div class="inner">
-									<header class="major">
-										<h2>Massa libero</h2>
-									</header>
-									<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
-									<ul class="actions">
-										<li><a href="landing.html" class="button next">Get Started</a></li>
-									</ul>
-								</div>
-							</section>
-
-					</div>
-
-				<!-- Contact -->
-					<section id="contact">
-						<div class="inner">
-							<section>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Clear" /></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section>
-								<section>
-									<div class="contact-method">
-										<span class="icon solid alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+            <!-- Future Projections Card -->
+            <div class="card p-5">
+                <h2 class="font-semibold text-xl mb-4">유동인구</h2>
+                <!-- Placeholder for future content -->
+                <div class="text-center text-gray-500">Content coming soon...</div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
