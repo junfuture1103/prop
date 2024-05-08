@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Step 1: Connect to Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap">
     <style>
         .card {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .highlight {
             background-color: #f9f9f9;
             border-radius: 9999px;
             padding: 0.5rem 1rem;
         }
 
-        
         /* Header styles */
         .header {
             background-color: #613535;
@@ -26,10 +29,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            /* Step 3: Apply font to header */
+            font-family: 'Nanum Gothic', sans-serif;
         }
 
         .header .logo {
-            width: 100px; /* Adjust as needed */
+            width: 100px;
+            /* Adjust as needed */
             height: auto;
         }
 
@@ -47,9 +53,15 @@
         .header .options a:hover {
             text-decoration: underline;
         }
+
+        /* Step 3: Apply font to body */
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
     </style>
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<body class="bg-gray-100 leading-normal tracking-normal">
     <div class="header">
         <img src="logo.png" alt="Logo" class="logo">
         <div class="options">
@@ -58,12 +70,12 @@
             <a href="#">메인페이지</a>
         </div>
     </div>
-    
+
     <div class="container mx-auto px-4">
         <div class="p-8 rounded-lg flex flex-col items-left justify-center space-y-4">
             <h4 class="text-2xl font-semibold mb-4">품아시 상권 분석 서비스</h4>
         </div>
-    
+
         <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col items-center justify-center space-y-4">
             <div class="flex items-center space-x-4">
                 <div class="dropdown">
@@ -97,8 +109,8 @@
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                 검색
             </button>
-        </div>          
-        
+        </div>
+
         <div class="grid grid-cols-3 gap-4 mt-8">
             <!-- Total Visitors Card -->
             <div class="card p-5">
@@ -162,7 +174,6 @@
         </div>
     </div>
 
-	
     <script>
         // JavaScript 코드 추가
         document.getElementById('mapButton').addEventListener('click', function() {
@@ -171,4 +182,5 @@
         });
     </script>
 </body>
+
 </html>
