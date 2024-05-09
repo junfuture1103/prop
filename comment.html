@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Section</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .comment-box {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .comment-interaction {
+            color: #555;
+            cursor: pointer;
+        }
+        .comment-interaction:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-xl mx-auto">
+        <h1 class="text-xl font-bold mb-4">Comments</h1>
+        <div class="mb-4">
+            <label for="commentType" class="block text-sm font-medium text-gray-700">Select Comment Type:</label>
+            <select id="commentType" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                <option>General</option>
+                <option>Question</option>
+                <option>Feedback</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label for="comment" class="block text-sm font-medium text-gray-700">Your Comment:</label>
+            <textarea id="comment" rows="4" class="shadow-sm mt-1 block w-full sm:text-sm border rounded-md" placeholder="Write your comment here..."></textarea>
+        </div>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Post Comment
+        </button>
+
+        <div class="mt-6">
+            <div class="comment-box mb-4">
+                <p class="text-sm text-gray-800">John Doe <span class="text-gray-400 text-xs">2 hours ago</span></p>
+                <p class="text-gray-600">This is a great start, but could we also consider adding a feature for...</p>
+                <p class="comment-interaction">Like (1)</p> <p class="comment-interaction">Reply</
+            </div>
+            <div class="comment-box mb-4">
+                <p class="text-sm text-gray-800">Jane Smith <span class="text-gray-400 text-xs">10 minutes ago</span></p>
+                <p class="text-gray-600">I totally agree! This feature would be very beneficial.</p>
+                <p class="comment-interaction">Like (10) · Reply</p>
+            </div>
+            <div class="comment-box">
+                <p class="text-sm text-gray-800">Alice Johnson <span class="text-gray-400 text-xs">9 hours ago</span></p>
+                <p class="text-gray-600">Has anyone considered the impact this might have on our workflow?</p>
+                <p class="comment-interaction">Like (5) · Reply</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
