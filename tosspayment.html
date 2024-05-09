@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>토스 결제 테스트</title>
+    <script src="https://js.tosspayments.com/v1"></script>
+    <script>
+        function requestTossPayment() {
+            const clientKey = 'your-client-key-here'; // 토스 클라이언트 키를 입력하세요
+            const tossPayments = TossPayments(clientKey);
+            tossPayments.requestPayment('카드', {
+                amount: 10000, // 결제 금액
+                orderId: 'order-id', // 주문 ID
+                orderName: '테스트 결제', // 주문 이름
+                customerName: '홍길동', // 고객 이름
+                successUrl: 'http://yoursite.com/success', // 결제 성공 시 URL
+                failUrl: 'http://yoursite.com/fail' // 결제 실패 시 URL
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="requestTossPayment()">토스로 결제하기</button>
+</body>
+</html>
