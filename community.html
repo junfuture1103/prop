@@ -15,6 +15,38 @@
             padding: 0;
         }
 
+        /* Header styles */
+        .header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Step 3: Apply font to header */
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .header .logo {
+            width: 50px;
+            /* Adjust as needed */
+            height: auto;
+        }
+
+        .header .options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header .options a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header .options a:hover {
+            text-decoration: underline;
+        }
         html {
             font-size: 10px;
         }
@@ -328,7 +360,20 @@
         };
         firebase.initializeApp(firebaseConfig);
     </script>
+    
+    <div class="header">
+        <a href = ./index.html><img src="./assets/image/logo_header.jpg" alt="Logo" class="logo"></a>
+        
+        <div class="options">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#">내 정보</a>
+            <a href="#">메인페이지</a>
+        </div>
+    </div>
+
+    
     <div class="board_wrap">
+        
         <div class="board_title">
             <strong>커뮤니티</strong>
         </div>
