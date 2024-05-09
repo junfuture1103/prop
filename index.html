@@ -232,11 +232,10 @@
 
     
     <script>
-        document.getElementById("searchInput").addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
-                var searchString = document.getElementById("searchInput").value;
-                window.location.href = "map.html?search=" + encodeURIComponent(searchString);
-            }
+        document.getElementById("searchInput").addEventListener("click", function(event) {
+            console.log("clicked");
+            var searchString = document.getElementById("searchInput").value;
+            window.location.href = "ranking_search.html";
         });
     </script>
 </body>
