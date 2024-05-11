@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-nJ1LK4vz4opYW1fC2+OcKzBJ9NpdkgcTsKX/11Ju+2Hp7xExIr9PMOstKCbP0Kn5DDquHzRN+8T4ys1YZ26Cog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Ranking and Recommendations</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap">
+    <style>
+        .search-bar {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Step 3: Apply font to header */
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+
+        .header .logo {
+            width: 50px;
+            /* Adjust as needed */
+            height: auto;
+        }
+
+        .header .options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .header .options a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header .options a:hover {
+            text-decoration: underline;
+        }
+
+        body{
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-300">
+    <div class="header">
+        <a href = ./index.html><img src="./assets/image/logo_header.jpg" alt="Logo" class="logo"></a>
+        
+        <div class="options">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#">내 정보</a>
+            <a href="#">메인페이지</a>
+        </div>
+    </div>
+
+    <div class="py-8">
+        
+        <div class="main-menu flex justify-center mb-10 space-x-8">
+            <a href="./market_analyse.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">상권분석</a>
+            <a href="./project_list.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">펀딩하기</a>
+            <a href="./community.html" class="text-black hover:text-purple-600 hover:underline font-semibold text-lg transition-colors duration-300">커뮤니티</a>
+        </div>        
+        
+
+        <div class="search-bar p-6 flex justify-center items-center mb-10">
+            <input id="searchInput" type="text" placeholder="검색어 입력" class="form-input px-4 py-2 w-full rounded-full border-2 border-gray-300 focus:border-gray-500 focus:outline-none">
+        </div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Left Column -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-4"> 펀딩 실시간 RANKING</h2>
+                    <ul>
+                        <li class="mb-4">
+                                <div class="flex items-center">
+                                    <!-- 순위 표시 --><div class="w-15 h-15 flex items-center justify-center rounded-full mr-4">
+                                    <span class="text-lg font-bold ">1</span>
+                                </div>
+
+                                <!-- 이미지 -->
+                                <img src="./assets/image/chicken_tang.jpg" alt="Product Image" class="w-16 h-16 mr-4" style="width: 60px; height: 50px;">
+                                <div>
+                                    <!-- 내용 -->
+                                    <h3 class="text-lg font-semibold">공공식당</h3>
+                                    <p class="text-gray-600">닭도리탕 30년 전통의 노하우!</p>
+                                    <span class="text-red-500 font-bold">53% 달성</span> <span class="text-gray-500">중랑구 묵동</span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 두 번째 샘플 -->
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <div class="w-15 h-15 flex items-center justify-center rounded-full mr-4">
+                                    <span class="text-lg font-bold">2</span>
+                                </div>
+                                <img src="./assets/image/haejang_soup.jpg" alt="해장국" class="w-16 h-16 mr-4" style="width: 60px; height: 50px;">
+                                <div>
+                                    <h3 class="text-lg font-semibold">해장할매집</h3>
+                                    <p class="text-gray-600">최고의 해장국을 만나보세요!</p>
+                                    <span class="text-red-500 font-bold">78% 달성</span> <span class="text-gray-500">서초구 서초동</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 세 번째 샘플 -->
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <div class="w-15 h-15 flex items-center justify-center rounded-full mr-4">
+                                    <span class="text-lg font-bold">3</span>
+                                </div>
+                                <img src="./assets/image/noodle.jpg" alt="국수" class="w-16 h-16 mr-4" style="width: 60px; height: 50px;">
+                                <div>
+                                    <h3 class="text-lg font-semibold">맛있는 국수집</h3>
+                                    <p class="text-gray-600">신선한 재료로 만든 국수를 즐겨보세요!</p>
+                                    <span class="text-red-500 font-bold">92% 달성</span> <span class="text-gray-500">강남구 역삼동</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 네 번째 샘플 -->
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <div class="w-15 h-15 flex items-center justify-center rounded-full mr-4">
+                                    <span class="text-lg font-bold">4</span>
+                                </div>
+                                <img src="./assets/image/grilled_meat.jpg" alt="숯불구이" class="w-16 h-16 mr-4" style="width: 60px; height: 50px;">
+                                <div>
+                                    <h3 class="text-lg font-semibold">숯불구이마을</h3>
+                                    <p class="text-gray-600">신선한 고기와 정성으로 준비한 숯불구이!</p>
+                                    <span class="text-red-500 font-bold">65% 달성</span> <span class="text-gray-500">송파구 잠실동</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Right Column -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold mb-4">오늘 뭐 먹지?!</h2>
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex space-x-2">
+                            <button class="px-4 py-2 bg-gray-200 rounded">전체</button>
+                            <button class="px-4 py-2 bg-gray-200 rounded">음식</button>
+                            <button class="px-4 py-2 bg-gray-200 rounded">디저트</button>
+                            <button class="px-4 py-2 bg-gray-200 rounded">기타</button>
+                        </div>
+                        <select class="form-select px-4 py-2 rounded border-gray-300">
+                            <option selected>최신순</option>
+                            <option>인기순</option>
+                        </select>
+                    </div>
+                    <ul>
+
+                        <!-- 첫 번째 샘플 -->
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <div class="w-15 h-15 flex items-center justify-center rounded-full mr-4">
+                                    <span class="text-lg font-bold">1</span>
+                                </div>
+                                <img src="./assets/image/sushi.jpg" alt="초밥" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">초밥마을</h3>
+                                    <p class="text-gray-600">신선한 재료로 만든 다양한 초밥을 즐겨보세요!</p>
+                                    <span class="text-red-500 font-bold">펀딩 페이지 이동</span> <span class="text-gray-500">강남구 신사동</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 두 번째 샘플 -->
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <div class="w-15 h-15 flex items-center justify-center rounded-full mr-4">
+                                    <span class="text-lg font-bold">2</span>
+                                </div>
+                                <img src="./assets/image/pizza.jpg" alt="피자" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">피자헤븐</h3>
+                                    <p class="text-gray-600">신선한 재료로 구워낸 최고의 피자를 맛보세요!</p>
+                                    <span class="text-red-500 font-bold">펀딩 페이지 이동</span> <span class="text-gray-500">마포구 상암동</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- 세 번째 샘플 -->
+                        <li class="mb-4">
+                            <div class="flex items-center">
+                                <div class="w-15 h-15 flex items-center justify-center rounded-full mr-4">
+                                    <span class="text-lg font-bold">3</span>
+                                </div>
+                                <img src="./assets/image/icream.jpg" alt="아이스크림" class="w-16 h-16 mr-4">
+                                <div>
+                                    <h3 class="text-lg font-semibold">아이스크림 카페</h3>
+                                    <p class="text-gray-600">신선한 우유와 과일로 만든 아이스크림을 즐겨보세요!</p>
+                                    <span class="text-red-500 font-bold">펀딩 페이지 이동</span> <span class="text-gray-500">서초구 방배동</span>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        document.getElementById("searchInput").addEventListener("click", function(event) {
+            console.log("clicked");
+            var searchString = document.getElementById("searchInput").value;
+            window.location.href = "ranking_search.html";
+        });
+    </script>
+</body>
+</html>
